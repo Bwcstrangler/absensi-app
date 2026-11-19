@@ -1,0 +1,17 @@
+{
+  "name": "absensi-app",
+  "version": "1.0.0",
+  "description": "Aplikasi Absensi",
+  "main": "server.js",
+  "type": "commonjs",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "better-sqlite3": "^11.0.0",
+    "cors": "^2.8.5",
+    "exceljs": "^4.4.0",
+    "express": "^4.19.2",
+    "pdfkit": "^0.15.0"
+  }
+}

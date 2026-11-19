@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Absensi App</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>📋 Absensi</h1>
+
+    <div id="loginBox">
+      <input id="username" placeholder="Username (coba: admin / budi)">
+      <input id="password" type="password" placeholder="Password (admin123 / 123456)">
+      <button onclick="login()">Login</button>
+      <hr>
+      <p style="text-align:center; font-size:13px">Belum punya akun?</p>
+      <input id="regNama" placeholder="Nama Lengkap">
+      <input id="regUsername" placeholder="Username baru">
+      <input id="regPassword" type="password" placeholder="Password baru">
+      <button onclick="register()" style="background:#16a34a">Daftar Akun Baru</button>
+    </div>
+
+    <div id="mainBox" style="display:none">
+      <p>Selamat datang, <b id="namaUser"></b>!</p>
+      <p id="infoHariIni" style="font-size:13px; color:#475569"></p>
+      <select id="status">
+        <option value="Hadir">Hadir</option>
+        <option value="Izin">Izin</option>
+        <option value="Sakit">Sakit</option>
+        <option value="Off">Off</option>
+      </select>
+      <input id="keterangan" placeholder="Keterangan (opsional)">
+      <button id="btnMasuk" onclick="absenMasuk()" style="background:#16a34a">🟢 Absen Masuk</button>
+      <button id="btnPulang" onclick="absenPulang()" style="background:#ea580c">🔴 Absen Pulang</button>
+      <button onclick="logout()" style="background:#64748b">Logout</button>
+
+      <div id="adminArea" style="display:none; margin-top:20px">
+        <h3>Rekap Absensi</h3>
+        <button onclick="exportExcel()" style="background:#16a34a">📊 Export Excel</button>
+        <button onclick="exportPDF()" style="background:#dc2626">📄 Export PDF</button>
+        <br><br>
+        <table id="tabelRekap" border="1" style="width:100%; border-collapse:collapse; font-size:13px"></table>
+      </div>
+    </div>
+
+  </div>
+<script src="app.js"></script>
+</body>
+</html>
